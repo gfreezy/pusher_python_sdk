@@ -23,7 +23,13 @@ from lib.RequestCore import *
 # @copyright Copyright (c) 2012-2020 百度在线网络技术(北京)有限公司
 # @version 1.0.0
 ### 
-
+'''
+ @author: blacklaw
+ @version: 1.1.0
+ @email:	blacklaw00@gmail.com
+ @date:	2013-06-08
+ @description: 由于百度把pycurl给限制掉了，老版的不能用，现在改为urllib2实现 
+'''
 
 
 class Channel(object):
@@ -481,7 +487,10 @@ class Channel(object):
 		
 		if(isinstance(self._curlOpts, dict)):
 			request.set_curlopts(self._curlOpts)
-
+		'''
+		@blacklaw 
+		bae 把pycurl取消了，现在必须换成urllib
+		'''
 		request.handle_request()
 		return ResponseCore(request.get_response_header(),
 							request.get_response_body(),
@@ -543,9 +552,8 @@ class Channel(object):
 
 
 	def _channelExceptionHandler(self, ex):
-		print ex.error_msg, self._arrayErrorMap[ex.error_code]		
+		print ex.error_msg, ex.error_code, 'self._arrayErrorMap[ex.error_code]'		
 		
 	
 			 
-
 

@@ -2,21 +2,25 @@
 # _*_ coding: UTF-8 _*_
 
 ###
- # 本文件百度云服务PHP版本SDK的公共网络交互功能
- # 
- # @author 百度移动.云事业部
- # @copyright Copyright (c) 2012-2020 百度在线网络技术(北京)有限公司
- # @version 1.0.0
- # @package
-##
-
+# 百度云推送PUSH服务 Python SDK
+#
+# 本文件提供百度云推动PUSH的Python版本SDK
+#
+# @author 百度云平台部
+# @copyright Copyright (c) 2012-2020 百度在线网络技术(北京)有限公司
+# @version 1.0.0
+### 
+'''
+ @author: blacklaw
+ @version: 1.1.0
+ @email:	blacklaw00@gmail.com
+ @date:	2013-06-08
+ @description: 由于百度把pycurl给限制掉了，老版的不能用，现在改为urllib2实现 
+'''
 
 import urlparse
-
-import pycurl
-
 import StringIO
-
+import urllib, urllib2
 
 class RequestCore(object):
 	"""封装curl，提供网络交互功能,组网络请求包，并保存返回结果"""
@@ -87,11 +91,28 @@ class RequestCore(object):
 
 	def set_proxy(self, proxy):
 		self.proxy = urlparse.urlparse(proxy)
-
+        
+	'''
+	bae 把pycurl 给取消了，我现在改成了urllib实现
+	'''
 	def handle_request(self):
+		url = self.request_url
+		headers = dict()
+		headers['HTTP_REFERER'] = self.request_url
+		request = urllib2.Request(url, self.request_body, headers)
+		f = urllib2.urlopen(request)
+		self.response_code = f.getcode()
+		self.response_headers = f.info()
+		self.response_body = f.read()
+		
+	'''
+		以前使用的是Curl方法，baidu把它禁用了
+	def handle_request_curl(self):
+		print '\n\n',dir(self),'\n\n'
 		curl_handle = pycurl.Curl()
 		# set default options.
-		curl_handle.setopt(pycurl.URL, self.request_url)
+		url = 'http://127.0.0.1/gethead.php'
+		curl_handle.setopt(pycurl.URL, url)#self.request_url)
 		curl_handle.setopt(pycurl.REFERER, self.request_url)
 		curl_handle.setopt(pycurl.USERAGENT, self.useragent)
 		curl_handle.setopt(pycurl.TIMEOUT, 5184000)
@@ -104,9 +125,11 @@ class RequestCore(object):
 			tmplist = list()
 			for(key, value) in self.request_headers.items():
 				tmplist.append(key + ':' + value)
+			print 'request keylist',dir(tmplist)
 			curl_handle.setopt(pycurl.HTTPHEADER, tmplist)
 		#目前只需支持POST
 		curl_handle.setopt(pycurl.HTTPPROXYTUNNEL, 1)
+		print '\n\n*************************\nrequest.body',self.request_body,'\n******************************\n'
 		curl_handle.setopt(pycurl.POSTFIELDS, self.request_body)
 
 		response = StringIO.StringIO()
@@ -118,11 +141,10 @@ class RequestCore(object):
 		resp_str = response.getvalue()
 		self.response_headers = resp_str[0 : header_size]
 		self.response_body = resp_str[header_size : ]
-	
+		print self.response_body
 		response.close()
 		curl_handle.close()
-
-	
+	'''
 	def get_response_header(self, header = None):
 		if(header is not None):
 			return self.response_headers[header]
@@ -156,3 +178,4 @@ class ResponseCore(object):
 
 
 		
+

@@ -9,7 +9,7 @@ Channel提供的方法和服务端API对应，是对服务端REST API的封装�
 
 工具组成：
 Python SDK工具包主要由以下部分组成：
-# Channel.py -- Python_SDK 脚本，包含对外提供的所有接口
+	Channel.py -- Python_SDK 脚本，包含对外提供的所有接口
 	lib -- 使用到的一些基础公用文件
 	sample/sample.python -- 展示如何使用 Python_SDK 的 demo 文件
 
