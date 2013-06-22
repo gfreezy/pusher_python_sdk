@@ -9,21 +9,21 @@ Channel提供的方法和服务端API对应，是对服务端REST API的封装�
 
 工具组成：
 Python SDK工具包主要由以下部分组成：
-#	Channel.py -- Python_SDK 脚本，包含对外提供的所有接口
-#	lib -- 使用到的一些基础公用文件
-#	sample/sample.python -- 展示如何使用 Python_SDK 的 demo 文件
+*	Channel.py -- Python_SDK 脚本，包含对外提供的所有接口
+*	lib -- 使用到的一些基础公用文件
+*	sample/sample.python -- 展示如何使用 Python_SDK 的 demo 文件
 
 SDK 依赖于以下组件：
-#	urllib,urllib2 
-#	python
+*	urllib,urllib2 
+*	python
 
 
 一般规则
-#	所有函数的参数和返回值中如果有中文，必须是UTF-8编码；
-#	不需要对函数参数进行urlencode。
+*	所有函数的参数和返回值中如果有中文，必须是UTF-8编码；
+*	不需要对函数参数进行urlencode。
 错误码集合
 如果用户在调用SDK时发生错误，那么错误分成两大类：
-#	与服务交互失败产生的错误，比如：SDK参数不完整、网络错误、服务器的返回不是正确的json包导致无法解析等，这类错误的错误码位于1-100区间，具体如下：
+*	与服务交互失败产生的错误，比如：SDK参数不完整、网络错误、服务器的返回不是正确的json包导致无法解析等，这类错误的错误码位于1-100区间，具体如下：
 服务器交互失败错误
 错误码	错误信息
 1	python sdk error
