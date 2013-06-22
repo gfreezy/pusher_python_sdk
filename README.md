@@ -32,7 +32,7 @@ SDK 依赖于以下组件：
 4	http status is error, and the body returned is not a json string
 5	http status is ok, but the body returned is not a json string
 
-***与服务器交互成功，但服务器返回了非200的HTTP状态，比如用户权限错误、重复绑定等，具体如下：*** 
+***与服务器交互成功，但服务器返回了非200的HTTP状态，比如用户权限错误、重复绑定等，具体如下：***     
 HTTP状态错误
 错误码	错误信息
 >30600	Internal Server Error
