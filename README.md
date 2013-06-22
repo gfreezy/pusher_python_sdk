@@ -2,10 +2,10 @@ Baidu Push 服务器端SDK Python版
 ==============
 吃水不忘挖井人，该sdk是在@luvchh基础上修改核心http请求方式来的，98%的代码是@luvchh完成的   
 **第一版：**   
-由@luvchh 提供，并开放在github上：   
+由[@luvchh](http://weibo.com/luvchh) 提供，并开放在github上：   
 github地址：<https://github.com/Argger/pusher_python_sdk>    
 **第二版：**   
-由@搞基宫陈尸 修改，   
+由[@搞基宫陈尸](http://www.weibo.com/u/2255232584) 修改，   
 github地址   
 - - -
 Python SDK总体介绍：
