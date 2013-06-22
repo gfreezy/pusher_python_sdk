@@ -26,11 +26,11 @@ SDK 依赖于以下组件：
 *	与服务交互失败产生的错误，比如：SDK参数不完整、网络错误、服务器的返回不是正确的json包导致无法解析等，这类错误的错误码位于1-100区间，具体如下：
 服务器交互失败错误
 错误码	错误信息
-1	python sdk error
-2	Python sdk init error
-3	lack param
-4	http status is error, and the body returned is not a json string
-5	http status is ok, but the body returned is not a json string
+>1	python sdk error   
+>2	Python sdk init error   
+>3	lack param   
+>4	http status is error, and the body returned is not a json string   
+>5	http status is ok, but the body returned is not a json string   
 
 ***与服务器交互成功，但服务器返回了非200的HTTP状态，比如用户权限错误、重复绑定等，具体如下：***     
 HTTP状态错误
@@ -44,5 +44,5 @@ HTTP状态错误
 >30606	Request Time Expires Timeout   
 >30607	Channel Token Timeout   
 >30608	Bind Relation Not Found   
->30609	Bind Number Too Many 
->30610	Duplicate Operation   
+>30609	Bind Number Too Many   
+>30610	Duplicate Operation     
