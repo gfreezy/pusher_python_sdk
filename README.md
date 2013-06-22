@@ -6,7 +6,7 @@ Baidu Push 服务器端SDK Python版
 github地址：<https://github.com/Argger/pusher_python_sdk>    
 **第二版：**   
 由[@搞基宫陈尸](http://www.weibo.com/u/2255232584) 修改，   
-github地址   
+github地址:<https://github.com/blacklaw0/pusher_python_sdk>   
 - - -
 Python SDK总体介绍：
 将百度Push服务端的所有操作封装成一个类Channel，通过对该类的简单初始化，即可调用其内部的各种方法，使用百度Push服务。
