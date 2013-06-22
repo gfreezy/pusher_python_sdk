@@ -35,14 +35,14 @@ SDK 依赖于以下组件：
 ***与服务器交互成功，但服务器返回了非200的HTTP状态，比如用户权限错误、重复绑定等，具体如下：***     
 HTTP状态错误
 错误码	错误信息
->30600	Internal Server Error
->30601	Method Not Allowed
->30602	Request Params Not Valid
->30603	Authentication Failed
->30604	Quota Use Up Payment Required
->30605	Data Required Not Found
->30606	Request Time Expires Timeout
->30607	Channel Token Timeout
->30608	Bind Relation Not Found
->30609	Bind Number Too Many
->30610	Duplicate Operation
+>30600	Internal Server Error   
+>30601	Method Not Allowed   
+>30602	Request Params Not Valid   
+>30603	Authentication Failed   
+>30604	Quota Use Up Payment Required   
+>30605	Data Required Not Found   
+>30606	Request Time Expires Timeout   
+>30607	Channel Token Timeout   
+>30608	Bind Relation Not Found   
+>30609	Bind Number Too Many 
+>30610	Duplicate Operation   
