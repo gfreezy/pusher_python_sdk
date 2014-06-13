@@ -1,16 +1,23 @@
 Baidu Push 服务器端SDK Python版
 ==============
 吃水不忘挖井人，该sdk是在@luvchh基础上修改核心http请求方式来的，98%的代码是@luvchh完成的
+
 **第一版：**
 由[@luvchh](http://weibo.com/luvchh) 提供，并开放在github上：
+
 github地址：<https://github.com/Argger/pusher_python_sdk>
+
 **第二版：**
 由[@搞基宫陈尸](http://www.weibo.com/u/2255232584) 修改，
+
 github地址:<https://github.com/blacklaw0/pusher_python_sdk>
+
 **第三版：**
 由 @gfreezy 修改，
+
 github地址:<https://github.com/gfreezy/pusher_python_sdk>
-- - -
+
+-------
 Python SDK总体介绍：
 将百度Push服务端的所有操作封装成一个类Channel，通过对该类的简单初始化，即可调用其内部的各种方法，使用百度Push服务。
 Channel提供的方法和服务端API对应，是对服务端REST API的封装，REST API请参考:http://developer.baidu.com/wiki/index.php?title=docs/cplat/push/api/list
@@ -34,6 +41,7 @@ SDK 依赖于以下组件：
 
 ---------------
 HTTP状态错误
+```
 错误码	错误信息
 >30600	Internal Server Error
 >30601	Method Not Allowed
@@ -46,3 +54,4 @@ HTTP状态错误
 >30608	Bind Relation Not Found
 >30609	Bind Number Too Many
 >30610	Duplicate Operation
+```
